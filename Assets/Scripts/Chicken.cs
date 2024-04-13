@@ -102,6 +102,11 @@ namespace viva
             UpdateTamedStatus();
         }
 
+        public override void OnDestroy()
+        {
+            GameDirector.mechanisms.Remove(this);
+        }
+
         public override bool AttemptCommandUse(Loli targetLoli, Character commandSource)
         {
             if (targetLoli == null)
